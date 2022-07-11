@@ -1,0 +1,67 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Мое не мое</title>
+{% endblock %}
+
+{% block header %}
+    <header>Обо мне</header>
+{% endblock %}
+
+{% block content %}
+    <h2>{{ me.myName }}</h2> <br>
+    <div class="photo-descrip">
+        <div><p>{{ me.myDescription }}</p></div>
+        <div><img src="{{ me.myPhoto }}" alt="Профиль" id="img-profile"> <br></div>
+    </div>
+    <div class="info-field">
+        <div id="info-word">
+            <p>Номер:</p>
+        </div>
+        <div id="info-info">
+            <p>{{ me.myNumber }}</p>
+        </div>
+    </div>
+    <div class="info-field">
+        <div id="info-word">
+            <p>Образование:</p>
+        </div>
+        <div id="info-info">
+            <p>{{ me.myEducation }}</p>
+        </div>
+    </div>
+    <div class="info-field">
+        <div id="info-word">
+            <p>Дата рождения:</p>
+        </div>
+        <div id="info-info">
+            <p>{{ me.myBirthDay }}</p>
+        </div>
+    </div>
+    <div class="info-field">
+        <div id="info-word">
+            <p>Gmail:</p>
+        </div>
+        <div id="info-info">
+            <p>{{ me.myGmail }}</p>
+        </div>
+    </div>
+    <div class="info-field">
+        <div id="info-word">
+            <p>Yandex:</p>
+        </div>
+        <div id="info-info">
+            <p>{{ me.myYandexMail }}</p>
+        </div>
+    </div>
+    <br>
+    <p>Полезные ссылки: </p>
+    <div class="useful-list">
+        <ul>
+            <h4><a href="{{ me.myVK }}"><i class="fa-brands fa-vk"></i> Вк</a></h4>
+            <h4><a href="{{ me.MyGitHub }}"><i class="fa-brands fa-github"></i> GitHub</a></h4>
+            <h4><a href="{{ me.myInstagram }}"><i class="fa-brands fa-instagram-square"></i> Instagram</a></h4>
+        </ul>
+    </div>
+{% endblock %}

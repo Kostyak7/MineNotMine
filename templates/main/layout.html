@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/main.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<div id="head-name"><h1>Моё не моё</h1> </div>
+
+<div class="navbar">
+        <a id="menu-select" href="{% url 'mainPage' %}">
+            <li><i class="fa-solid fa-people-robbery"></i> Посты</li>
+        </a>
+        <a id="menu-select" href="{% url 'userList' 0 %}">
+            <li><i class="fa-regular fa-address-card"></i> Хто я?</li>
+        </a>
+</div>
+
+{% block header %}
+{% endblock %}
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>Мое не мое</title>
+{% endblock %}
+
+
+{% block header %}
+    <header>Запись от {{ post.postDate }}</header>
+{% endblock %}
+
+{% block content %}
+
+    <div class="post-field">
+        <div class="el-post-photo"><img src="/{{ post.photo_1 }}" alt="Пост" id="img-post"> <br></div>
+        {% if post.numberPhoto >= 2 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_2 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        {% if post.numberPhoto >= 3 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_3 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        {% if post.numberPhoto >= 4 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_4 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        {% if post.numberPhoto >= 5 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_5 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        {% if post.numberPhoto >= 6 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_6 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        {% if post.numberPhoto >= 7 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_7 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        {% if post.numberPhoto >= 8 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_8 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        {% if post.numberPhoto >= 9 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_9 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        {% if post.numberPhoto >= 10 %}
+            <div class="el-post-photo"><img src="/{{ post.photo_10 }}" alt="Пост" id="img-post"> <br></div>
+        {% endif %}
+        <div class="el-post-txt"><p>{{ post.someText|linebreaks }}.</p> <br></div>
+    </div>
+{% endblock %}

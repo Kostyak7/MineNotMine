@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>Мое не мое</title>
+{% endblock %}
+
+{% block header %}
+    <header>Мои записи</header>
+{% endblock %}
+
+{% block content %}
+    {% if posts %}
+        {% for el in posts %}
+            <div class="post-posts">
+                <a href="{% url 'postPage' el.id %}">
+                    <img src="{{ el.photo_1 }}" alt="Пост" id="img-post-s"> <br>
+                    <p id="post-date">{{ el.postDate }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
