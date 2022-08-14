@@ -1,46 +1,48 @@
 {% extends 'main/layout.html' %}
+{% load static %}
 
 {% block title %}
     <title>Мое не мое</title>
 {% endblock %}
 
-
 {% block header %}
     <header>Запись от {{ post.postDate }}</header>
 {% endblock %}
 
+
 {% block content %}
-
-    <div class="post-field">
-        <div class="el-post-photo"><img src="{{ post.photo_1 }}" alt="Пост" id="img-post"> <br></div>
-
+    <div id="post-global-field">
+        <div class="post element-photo"><img class="img-post" id="img-1" alt="Пост" src="{{ post.photo_1 }}"><br></div>
         {% if post.numberPhoto >= 2 %}
-            <div class="el-post-photo"><img src="{{ post.photo_2 }}" alt="Пост" id="img-post"> <br></div>
+            <div class="post element-photo"><img class="img-post" id="img-2" alt="Пост" src="{{ post.photo_2 }}"><br></div>
         {% endif %}
-        {% if post.numberPhoto >= 3 %}
-            <div class="el-post-photo"><img src="{{ post.photo_3 }}" alt="Пост" id="img-post"> <br></div>
+    {% if post.numberPhoto >= 3 %}
+            <div class="post element-photo"><img class="img-post" id="img-3" alt="Пост" src="{{ post.photo_3 }}"><br></div>
         {% endif %}
-        {% if post.numberPhoto >= 4 %}
-            <div class="el-post-photo"><img src="{{ post.photo_4 }}" alt="Пост" id="img-post"> <br></div>
+    {% if post.numberPhoto >= 4 %}
+            <div class="post element-photo"><img class="img-post" id="img-4" alt="Пост" src="{{ post.photo_4 }}"><br></div>
         {% endif %}
-        {% if post.numberPhoto >= 5 %}
-            <div class="el-post-photo"><img src="{{ post.photo_5 }}" alt="Пост" id="img-post"> <br></div>
+    {% if post.numberPhoto >= 5 %}
+            <div class="post element-photo"><img class="img-post" id="img-5" alt="Пост" src="{{ post.photo_5 }}"><br></div>
         {% endif %}
-        {% if post.numberPhoto >= 6 %}
-            <div class="el-post-photo"><img src="{{ post.photo_6 }}" alt="Пост" id="img-post"> <br></div>
+    {% if post.numberPhoto >= 6 %}
+            <div class="post element-photo"><img class="img-post" id="img-6" alt="Пост" src="{{ post.photo_6 }}"><br></div>
         {% endif %}
-        {% if post.numberPhoto >= 7 %}
-            <div class="el-post-photo"><img src="{{ post.photo_7 }}" alt="Пост" id="img-post"> <br></div>
+    {% if post.numberPhoto >= 7 %}
+            <div class="post element-photo"><img class="img-post" id="img-7" alt="Пост" src="{{ post.photo_7 }}"><br></div>
         {% endif %}
-        {% if post.numberPhoto >= 8 %}
-            <div class="el-post-photo"><img src="{{ post.photo_8 }}" alt="Пост" id="img-post"> <br></div>
+    {% if post.numberPhoto >= 8 %}
+            <div class="post element-photo"><img class="img-post" id="img-8" alt="Пост" src="{{ post.photo_8 }}"><br></div>
         {% endif %}
-        {% if post.numberPhoto >= 9 %}
-            <div class="el-post-photo"><img src="{{ post.photo_9 }}" alt="Пост" id="img-post"> <br></div>
+    {% if post.numberPhoto >= 9 %}
+            <div class="post element-photo"><img class="img-post" id="img-9" alt="Пост" src="{{ post.photo_9 }}"></div>
         {% endif %}
-        {% if post.numberPhoto >= 10 %}
-            <div class="el-post-photo"><img src="{{ post.photo_10 }}" alt="Пост" id="img-post"> <br></div>
+    {% if post.numberPhoto >= 10 %}
+            <div class="post element-photo"><img class="img-post" id="img-10" alt="Пост" src="{{ post.photo_10 }}"><br></div>
         {% endif %}
-        <div class="el-post-txt"><p>{{ post.someText|linebreaks }}.</p> <br></div>
+
+    <div class="post element-txt"><p id="txt-1">{{ post.someText|linebreaks }}</p> <br></div>
     </div>
+
+    <script src="{% static 'main/js/post.js' %}"></script>
 {% endblock %}

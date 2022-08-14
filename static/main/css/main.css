@@ -22,8 +22,8 @@ header {
 main {
     display: block;
     margin: auto;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 2%;
+    padding-right: 2%;
     padding-top: 2%;
 }
 
@@ -35,14 +35,16 @@ button {
     margin-top: 20px;
 }
 
-.navbar {
+/*------------Панель меню----------------*/
+
+#navbar {
     background-color: #00c1b1;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.navbar a{
+#navbar a {
     list-style: none;
     margin: 10px;
     padding: 5px;
@@ -52,19 +54,25 @@ button {
     text-align: center;
 }
 
-.navbar  li {
+#navbar li {
     color: #006500;
     margin-top: 1%;
     transition: all .3s ease;
 }
 
-.navbar  a:hover, .navbar  li:hover {
+#navbar a:hover, #navbar li:hover {
     color: #03f6ff;
     transform: scale(1.2);
 }
 
+/*------------Обо мне----------------*/
 
-.photo-descrip {
+#about-me-field {
+    padding-left: 13%;
+    padding-right: 13%;
+}
+
+.element-description {
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -72,15 +80,15 @@ button {
     justify-content: start;
 }
 
-.photo-descrip div {
+.element-description div {
     width: 50%;
 }
 
-.photo-descrip p {
+.element-description p {
     text-align: start;
 }
 
-.photo-descrip img {
+.element-description img {
     width: 30%;
 }
 
@@ -89,13 +97,15 @@ button {
     flex-direction: row;
     padding: 5px;
     justify-content: start;
-    width: 80%;
+    /*width: 80%;*/
 }
-.info-field #info-word {
-    width: 30%;
+
+.info-field .word {
+    width: 40%;
 }
-.info-field #info-info {
-    width: 70%;
+
+.info-field .info {
+    width: 60%;
 }
 
 .useful-list ul {
@@ -113,7 +123,9 @@ button {
     transform: scale(1.1);
 }
 
-.post-posts {
+/*------------Главная страница постов----------------*/
+
+.post-small-box {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -121,11 +133,12 @@ button {
     padding-bottom: 10vh;
 }
 
-.post-posts a{
+.post-small-box a {
     list-style: none;
     text-decoration: none;
     color: #333741;
-    width: 30%;
+    /*width: 30%;*/
+    width: 300px;
     height: 28vh;
     border-radius: 20px;
     border: 2px solid #c0c8d5;
@@ -133,32 +146,146 @@ button {
     transition: all .8s ease;
 }
 
-.post-posts a:hover{
+.post-small-box a:hover {
     z-index: 1;
     color: #8c8cc4;
     transform: scale(1.2);
     margin: 10px;
 }
 
-#img-post-s {
+.post-small-box #img-post {
     padding-top: 5%;
     height: 22vh;
 }
 
+/*------------Страничка поста----------------*/
 
-.post-field .el-post-photo {text-align: center; padding-bottom: 5vh;}
-/*.post-field .el-post-txt {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    justify-content: center;*/
-/*}*/
-
-.post-field .el-post-txt p {
-
-width: 90%;
+#post-global-field .element-photo {
+    text-align: center;
+    padding-bottom: 5vh;
 }
 
-#img-post {
+#post-global-field .txt p {
+    width: 90%;
+}
+
+#post-global-field .img-post {
     height: 45vh;
 }
+
+
+/*-------------Show Big-size photo----------------*/
+
+#cover-div {
+    top: 0;
+    left: 0;
+    position: fixed;
+    opacity: 0.8;
+    background-color: #575656;
+    z-index: 9000;
+    width: 100%;
+    height: 100%;
+}
+
+#cover-container:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+#cover-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9900;
+    /*display: none;*/
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#cover-photo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+
+}
+
+#BigSizePhoto {
+    height: 85vh;
+    border: 1px solid black;
+    background: white no-repeat;
+}
+
+#cover-exit {
+    position: fixed;
+    z-index: 9990;
+    top: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0.5;
+    margin-right: 1%;
+    margin-top: 1%;
+    width: 1%;
+}
+
+#cross-exit {
+    text-decoration: none;
+    transform: scale(4);
+}
+
+#cross-exit:hover {
+    background-color: #969696;
+}
+
+#cover-exit i:active {
+    transform: scale(1.2);
+    color: black;
+}
+
+
+/*--------------______---------------*/
+
+
+/*Description of classes and ids*/
+
+/*id:head-name - название сайта в хедере, div c h1*/
+/*id:navbar - навигационная панель, div*/
+/*class:menu-select - кнопки навигации, а*/
+
+
+/*id:about-me-field - поле страницки обо мне, div*/
+/*class:element-description - поле описания и фото, div */
+/*id:description-div-global - тоже что и class:element-description*/
+/*id:description-div - внутрени div-ы предыдущего id*/
+/*id:img-profile - фото профиля, img*/
+/*class:info-field - поле с информацией, div, содержит классы info и word*/
+/*class: ... word - описание следующей информации, div*/
+/*class: ... info - информация, div*/
+/*class:useful-list - поле с кнопками-ссылками, div*/
+
+
+/*class:post-small-box - квадрат-ссылка на пост, div*/
+/*id:img-post - мини-фото поста, img*/
+/*id:post-date - дата потса, p*/
+
+
+/*id:post-global-field - страничка поста, div, содержит текст и картинки*/
+/*class:post - элементы поста,div, содержит классы element-photo и element-txt*/
+/*class:img-post - картинки поста, img, имеет id="img-{n}"*/
+/*id:txt-1 - текст поста, p, в классе element-txt*/
+
+/*id:cover-div-global - общий div со всеми элементами*/
+/*id:cover-div - внешний div, с полупрозрачным фоном*/
+/*id:cover-container* - div-контейнер*/
+/*id:cover-photo* - div с фото*/
+/*id:BigSizePhoto* - само фото, img*/
+/*id:cover-exit - поле с крестиком, div*/
+/*id:cross-exit - второе поле с крестиком, div c i*/
+
+/**/
+
+
+
 

@@ -11,9 +11,13 @@
 {% block content %}
     {% if posts %}
         {% for el in posts %}
-            <div class="post-posts">
+            <div class="post-small-box">
                 <a href="{% url 'postPage' el.id %}">
-                    <img src="{{ el.photo_1 }}" alt="Пост" id="img-post-s"> <br>
+                    {% if el.photo_1 == el.default_path %}
+                        <img src="{{ el.default_img }}" alt="Пост" id="img-post"> <br>
+                    {% else %}
+                        <img src="{{ el.photo_1 }}" alt="Пост" id="img-post"> <br>
+                    {% endif %}
                     <p id="post-date">{{ el.postDate }}</p>
                 </a>
             </div>
