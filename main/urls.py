@@ -7,4 +7,4 @@ from .views import BasePageView, PostPageView
 urlpatterns = [
     path('', BasePageView.as_view(), name='mainPage'),
     path('post/<int:pk>', PostPageView.as_view(), name='postPage'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
